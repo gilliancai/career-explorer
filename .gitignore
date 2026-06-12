@@ -1,0 +1,80 @@
+# ============================================================
+#  career-ops — TEMPLATE .gitignore
+#
+#  This repo is a TEMPLATE. Your personal job-search data stays
+#  LOCAL and is never committed. You create your real files from
+#  the committed *.example / *.template scaffolding:
+#
+#    config/profile.example.yml   ->  config/profile.yml
+#    modes/_profile.template.md   ->  modes/_profile.md
+#    templates/portals.example.yml -> portals.yml
+#    examples/cv-example.md       ->  cv.md
+#
+#  Tip: most people fork this to a PRIVATE repo once they start
+#  filling in real data. If you keep your fork public, make sure
+#  your tracker / pipeline / story-bank don't contain anything
+#  you wouldn't post publicly.
+# ============================================================
+
+# --- Your personal identity & customization (never commit) ---
+/cv.md
+/article-digest.md
+/config/profile.yml
+/modes/_profile.md
+/portals.yml
+
+# --- Your work product (never commit) ---
+/reports/*
+!/reports/.gitkeep
+/output/*
+!/output/.gitkeep
+/jds/*
+!/jds/.gitkeep
+/writing-samples/*
+!/writing-samples/README.md
+
+# Interview prep: keep the empty story-bank template, ignore your personal prep docs
+/interview-prep/*
+!/interview-prep/.gitkeep
+!/interview-prep/story-bank.md
+
+# --- Scan / automation state (machine-local) ---
+/data/scan-history.tsv
+/data/new-openings.log
+/data/openings-dismissed.txt
+/data/*.bak
+
+# --- Batch run state & outputs ---
+batch/logs/*
+!batch/logs/.gitkeep
+batch/batch-state.tsv
+batch/batch-input.tsv
+batch/tracker-additions/**/*.tsv
+!batch/tracker-additions/.gitkeep
+
+# --- Secrets (use .env.example as the template) ---
+.env
+
+# --- Generated / dependencies / state ---
+node_modules/
+bun.lock
+package-lock.json
+.resolved-prompt-*
+.update-dismissed
+.update-lock
+career-dashboard
+
+# --- Session screenshots / debug artifacts ---
+/*.png
+!docs/*.png
+.playwright-mcp/
+
+# --- OS / editor ---
+.DS_Store
+*.mov
+*.mp4
+.vscode/
+
+# --- Claude Code local state ---
+.claude/settings.local.json
+.claude/memory/
